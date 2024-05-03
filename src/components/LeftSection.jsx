@@ -69,7 +69,7 @@ const LeftSection = () => {
 
   const getWeather = async (lat, lon) => {
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${
         import.meta.env.VITE_APIKEY
       }`
     );
@@ -147,7 +147,6 @@ const LeftSection = () => {
     };
   }, [weatherData.lat, weatherData.lon]);
   
-
   if (weatherData.temperatureC) {
     return (
       <>
@@ -170,7 +169,7 @@ const LeftSection = () => {
             <div className="dmy">
               <div id="txt"></div>
               <div className="current-time">
-                <Clock format="HH:mm:ss" interval={1000} ticking={true} />
+                <Clock format={'h:mm:ss A'} interval={1000} ticking={true} />
               </div>
               <div className="current-date">{dateBuilder(new Date())}</div>
             </div>
