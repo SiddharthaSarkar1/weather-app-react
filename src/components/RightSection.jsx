@@ -11,7 +11,7 @@ const RightSection = (props) => {
   const search = (city) => {
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${
+        `https://api.openweathermap.org/data/2.5/weather?q=${
           city != "[object Object]" ? city : query
         }&units=metric&APPID=${import.meta.env.VITE_APIKEY}`
       )
